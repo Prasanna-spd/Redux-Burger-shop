@@ -1,6 +1,12 @@
-import { createStore } from "redux";
-import burgerReducer from "./burger/burgerReducer";
+import { createStore, applyMiddleware } from "redux";
+import logger from "redux-logger";
+// import burgerReducer from "./burger/burgerReducer";
+import rootReducer from "./rootReducer";
+import { composeWithDevTools } from "@redux-devtools/extension";
 
-const store = createStore(burgerReducer);
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(logger))
+);
 
 export default store;

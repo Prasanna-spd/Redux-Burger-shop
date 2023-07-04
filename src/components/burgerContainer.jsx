@@ -13,7 +13,7 @@ function BurgerShop(props) {
 
 const mapStatetoProps = (state) => {
   return {
-    numOfBurgers: state.numOfBurgers,
+    numOfBurgers: state.burger.numOfBurgers,
   };
 };
 
